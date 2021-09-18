@@ -1,5 +1,6 @@
 import 'package:app_filmes/modules/splash/splash_module.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
@@ -8,6 +9,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   //iniciar o firebase
   await Firebase.initializeApp();
+  //Utilizar o remote config - local onde está a chave api do filmesMb
+  await RemoteConfig.instance.fetchAndActivate();
   //iniciar o app
   runApp(MyApp());
 }
