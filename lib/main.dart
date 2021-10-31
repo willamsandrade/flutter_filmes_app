@@ -6,6 +6,8 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
+import 'modules/home/home_module.dart';
+
 void main() async {
   //iniciar o flutter antes de iniciar o app
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,6 +33,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         ...SplashModule().routers, //3 pontos destruir o array e distruir
         ...LoginModule().routers,
+        ...HomeModule().routers,
       ],
     );
   }
