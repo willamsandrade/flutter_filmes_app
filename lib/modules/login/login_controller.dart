@@ -20,6 +20,13 @@ class LoginController extends GetxController with LoaderMixin, MessagesMixin{
     loaderListener(loading); //Escutando para exibir circular progress
     messageListener(message); //Escutando para exiber Mensagem
   }
+
+  @override
+  void onClose() {
+    // TODO: implement onClose
+    super.onClose();
+  }
+  
   
   void login() async{
 
